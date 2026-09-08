@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0B0F19" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded squircle -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <rect x="16" y="16" width="480" height="480" rx="112" stroke="url(#accentGrad)" stroke-width="4" stroke-opacity="0.3" />
+  
+  <!-- Athena Symbol: Neural Crest & Geometric Owl of Wisdom -->
+  <g transform="translate(106, 96)">
+    <!-- Central Crest Aura -->
+    <circle cx="150" cy="150" r="120" fill="url(#glowGrad)" opacity="0.15" />
+    
+    <!-- Outer Shield / Aegis Wings -->
+    <path d="M150 20 L240 70 L240 180 C240 240 190 285 150 300 C110 285 60 240 60 180 L60 70 Z" 
+          stroke="url(#accentGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7"/>
+          
+    <!-- Inner Wisdom Arch & Neural nodes -->
+    <path d="M100 120 C100 90 125 70 150 70 C175 70 200 90 200 120 C200 160 150 210 150 210 C150 210 100 160 100 120 Z" 
+          fill="url(#accentGrad)" opacity="0.9"/>
+          
+    <!-- Owl Eyes / Dual Mind Synapses -->
+    <circle cx="128" cy="120" r="14" fill="#0F172A" />
+    <circle cx="128" cy="120" r="6" fill="#38BDF8" />
+    
+    <circle cx="172" cy="120" r="14" fill="#0F172A" />
+    <circle cx="172" cy="120" r="6" fill="#38BDF8" />
+    
+    <!-- Third Eye / Memory Core -->
+    <polygon points="150,86 156,98 150,110 144,98" fill="#FFFFFF" />
+    
+    <!-- Synaptic Network Lines -->
+    <circle cx="90" cy="200" r="5" fill="#38BDF8" />
+    <circle cx="210" cy="200" r="5" fill="#38BDF8" />
+    <line x1="128" y1="134" x2="90" y2="200" stroke="#38BDF8" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+    <line x1="172" y1="134" x2="210" y2="200" stroke="#38BDF8" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+    <line x1="90" y1="200" x2="150" y2="245" stroke="#6366F1" stroke-width="2" opacity="0.6"/>
+    <line x1="210" y1="200" x2="150" y2="245" stroke="#6366F1" stroke-width="2" opacity="0.6"/>
+    <circle cx="150" cy="245" r="6" fill="#A855F7" />
+  </g>
+</svg>

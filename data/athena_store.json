@@ -1,0 +1,756 @@
+{
+  "profile": {
+    "name": "Abinayak",
+    "email": "abinayak829@gmail.com",
+    "preferredStudyHours": "Evening (6:00 PM - 10:00 PM)",
+    "dailyFocusTargetMinutes": 180,
+    "quietHours": {
+      "enabled": true,
+      "start": "23:00",
+      "end": "07:00"
+    },
+    "notifications": {
+      "upcomingDeadlines": true,
+      "studyReminders": true,
+      "dailyBriefing": true,
+      "quietHoursMute": true,
+      "maxPerDay": 4
+    },
+    "onboardingCompleted": true,
+    "theme": "dark"
+  },
+  "memories": [
+    {
+      "content": "Weak in dynamic programming (DP) state reduction",
+      "category": "Academic",
+      "importance": "high",
+      "confidence": 0.95,
+      "source": "user_explicit",
+      "tags": [
+        "academic"
+      ],
+      "isStarred": true,
+      "id": "mem-1788752435517-10xu",
+      "createdDate": "2026-09-07T03:40:35.517Z",
+      "updatedDate": "2026-09-07T03:40:35.517Z"
+    },
+    {
+      "id": "mem-1",
+      "content": "I find dynamic programming state transitions challenging and learn better when drawing decision trees.",
+      "category": "Academic",
+      "importance": "high",
+      "confidence": 0.95,
+      "source": "user_explicit",
+      "createdDate": "2026-08-31T03:35:14.556Z",
+      "updatedDate": "2026-08-31T03:35:14.556Z",
+      "tags": [
+        "weakness",
+        "dsa",
+        "dp",
+        "study-style"
+      ],
+      "isStarred": true
+    },
+    {
+      "id": "mem-2",
+      "content": "I prefer doing cognitively demanding study sessions in the evening (between 6:00 PM and 10:00 PM).",
+      "category": "Preferences",
+      "importance": "high",
+      "confidence": 0.9,
+      "source": "onboarding",
+      "createdDate": "2026-08-28T03:35:14.556Z",
+      "updatedDate": "2026-08-28T03:35:14.556Z",
+      "tags": [
+        "routine",
+        "focus-hours",
+        "energy"
+      ],
+      "isStarred": true
+    },
+    {
+      "id": "mem-3",
+      "content": "Technical mock interview scheduled for next Tuesday at 10:00 AM focusing on operating systems and DSA.",
+      "category": "Career",
+      "importance": "high",
+      "confidence": 1,
+      "source": "user_explicit",
+      "createdDate": "2026-09-05T03:35:14.556Z",
+      "updatedDate": "2026-09-05T03:35:14.556Z",
+      "tags": [
+        "interview",
+        "career",
+        "deadlines"
+      ]
+    },
+    {
+      "id": "mem-4",
+      "content": "Building Athena as an Android-first personal AI operating system with clean MLOps and memory architecture.",
+      "category": "Projects",
+      "importance": "medium",
+      "confidence": 0.95,
+      "source": "chat_inferred",
+      "createdDate": "2026-09-03T03:35:14.556Z",
+      "updatedDate": "2026-09-03T03:35:14.556Z",
+      "tags": [
+        "project",
+        "athena",
+        "architecture"
+      ]
+    },
+    {
+      "id": "mem-5",
+      "content": "Aim to maintain 18-20 hours of focused study per week without burning out on weekends.",
+      "category": "Goals",
+      "importance": "high",
+      "confidence": 0.85,
+      "source": "user_explicit",
+      "createdDate": "2026-08-26T03:35:14.556Z",
+      "updatedDate": "2026-08-26T03:35:14.556Z",
+      "tags": [
+        "goal",
+        "weekly-target",
+        "balance"
+      ]
+    },
+    {
+      "id": "mem-6",
+      "content": "Tend to feel fatigued and postpone tasks after 3 consecutive high-difficulty coding problems without a break.",
+      "category": "Personal",
+      "importance": "medium",
+      "confidence": 0.8,
+      "source": "session_log",
+      "createdDate": "2026-09-02T03:35:14.556Z",
+      "updatedDate": "2026-09-02T03:35:14.556Z",
+      "tags": [
+        "energy",
+        "pacing",
+        "habits"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Complete DBMS assignment on B+ Tree queries",
+      "description": "Implement B+ Tree insertion and range queries, write brief performance analysis",
+      "category": "Academic",
+      "priority": "Critical",
+      "calculatedScore": 94,
+      "recommendedRank": 1,
+      "recommendationReason": "Recommended first because the deadline is tomorrow and it directly affects course grade.",
+      "deadline": "2026-09-08T23:59:00",
+      "estimatedEffortMinutes": 60,
+      "status": "Todo",
+      "subject": "Database Management Systems",
+      "tags": [
+        "assignment",
+        "dbms",
+        "urgent"
+      ],
+      "createdAt": "2026-09-06T03:35:14.556Z"
+    },
+    {
+      "id": "task-2",
+      "title": "Revise Dynamic Programming memoization patterns",
+      "description": "Solve 3 classic problems: Coin Change, Edit Distance, and 0/1 Knapsack",
+      "category": "Academic",
+      "priority": "High",
+      "calculatedScore": 88,
+      "recommendedRank": 2,
+      "recommendationReason": "Targeted revision: You noted DP as a weakness, and interview prep requires it.",
+      "estimatedEffortMinutes": 75,
+      "status": "Todo",
+      "subject": "Data Structures & Algorithms",
+      "tags": [
+        "revision",
+        "dsa",
+        "weak-area"
+      ],
+      "createdAt": "2026-09-05T03:35:14.556Z"
+    },
+    {
+      "id": "task-3",
+      "title": "Prepare OS & System fundamentals for Tuesday interview",
+      "description": "Review virtual memory, threads vs processes, and synchronization primitives",
+      "category": "Career",
+      "priority": "High",
+      "calculatedScore": 82,
+      "recommendedRank": 3,
+      "recommendationReason": "Technical interview coming up next Tuesday; consistent spaced review recommended.",
+      "deadline": "2026-09-12T10:00:00",
+      "estimatedEffortMinutes": 90,
+      "status": "Todo",
+      "project": "Tech Interview Prep",
+      "tags": [
+        "interview",
+        "os",
+        "career"
+      ],
+      "createdAt": "2026-09-04T03:35:14.556Z"
+    },
+    {
+      "id": "task-4",
+      "title": "Implement Athena drift detection metrics & pipeline",
+      "description": "Log prediction acceptance, track feature shift scores, and display drift alerts",
+      "category": "Project",
+      "priority": "Medium",
+      "calculatedScore": 71,
+      "recommendedRank": 4,
+      "recommendationReason": "Active project deliverable; schedule for after academic commitments.",
+      "estimatedEffortMinutes": 60,
+      "status": "In Progress",
+      "project": "Athena AI",
+      "tags": [
+        "project",
+        "mlops",
+        "code"
+      ],
+      "createdAt": "2026-09-03T03:35:14.556Z"
+    },
+    {
+      "id": "task-5",
+      "title": "Submit software engineering internship application to Cloudflare",
+      "description": "Tailor resume for systems engineering role and upload portfolio link",
+      "category": "Career",
+      "priority": "High",
+      "calculatedScore": 68,
+      "recommendedRank": 5,
+      "recommendationReason": "Application portal closes in 3 days; low effort (30m) with high career impact.",
+      "deadline": "2026-09-10T23:59:00",
+      "estimatedEffortMinutes": 30,
+      "status": "Todo",
+      "project": "Summer Internships",
+      "tags": [
+        "career",
+        "application"
+      ],
+      "createdAt": "2026-09-06T03:35:14.556Z"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "sub-dsa",
+      "name": "Data Structures & Algorithms",
+      "code": "CS201",
+      "targetExamDate": "2026-09-12",
+      "importance": "high",
+      "color": "#38BDF8",
+      "topics": [
+        {
+          "id": "top-dp",
+          "subjectId": "sub-dsa",
+          "name": "Dynamic Programming",
+          "subtopics": [
+            "1D DP",
+            "Knapsack Pattern",
+            "Longest Common Subsequence",
+            "State Optimization"
+          ],
+          "difficulty": "Hard",
+          "currentMastery": 62,
+          "targetMastery": 85,
+          "confidence": "Medium",
+          "lastStudiedDate": "2026-09-04",
+          "totalSessions": 6,
+          "totalMinutes": 320
+        },
+        {
+          "id": "top-graphs",
+          "subjectId": "sub-dsa",
+          "name": "Graphs & Shortest Paths",
+          "subtopics": [
+            "BFS/DFS",
+            "Dijkstra",
+            "Topological Sort",
+            "Disjoint Set Union"
+          ],
+          "difficulty": "Hard",
+          "currentMastery": 45,
+          "targetMastery": 80,
+          "confidence": "Low",
+          "lastStudiedDate": "2026-09-01",
+          "totalSessions": 4,
+          "totalMinutes": 190
+        },
+        {
+          "id": "top-trees",
+          "subjectId": "sub-dsa",
+          "name": "Trees & Binary Search Trees",
+          "subtopics": [
+            "Tree Traversals",
+            "LCA",
+            "Segment Trees"
+          ],
+          "difficulty": "Medium",
+          "currentMastery": 80,
+          "targetMastery": 85,
+          "confidence": "High",
+          "lastStudiedDate": "2026-09-05",
+          "totalSessions": 5,
+          "totalMinutes": 240
+        }
+      ]
+    },
+    {
+      "id": "sub-dbms",
+      "name": "Database Management Systems",
+      "code": "CS304",
+      "targetExamDate": "2026-09-10",
+      "importance": "critical",
+      "color": "#F59E0B",
+      "topics": [
+        {
+          "id": "top-indexing",
+          "subjectId": "sub-dbms",
+          "name": "Indexing & B+ Trees",
+          "subtopics": [
+            "B+ Tree Insertion",
+            "Clustered vs Non-Clustered",
+            "Hash Indexing"
+          ],
+          "difficulty": "Medium",
+          "currentMastery": 70,
+          "targetMastery": 90,
+          "confidence": "Medium",
+          "lastStudiedDate": "2026-09-07",
+          "totalSessions": 4,
+          "totalMinutes": 210
+        },
+        {
+          "id": "top-transactions",
+          "subjectId": "sub-dbms",
+          "name": "Transactions & Concurrency Control",
+          "subtopics": [
+            "ACID Properties",
+            "Two-Phase Locking (2PL)",
+            "Deadlock Prevention"
+          ],
+          "difficulty": "Hard",
+          "currentMastery": 55,
+          "targetMastery": 80,
+          "confidence": "Low",
+          "lastStudiedDate": "2026-09-03",
+          "totalSessions": 3,
+          "totalMinutes": 140
+        },
+        {
+          "id": "top-sql",
+          "subjectId": "sub-dbms",
+          "name": "Relational Algebra & Advanced SQL",
+          "subtopics": [
+            "Joins",
+            "Window Functions",
+            "Subqueries"
+          ],
+          "difficulty": "Easy",
+          "currentMastery": 88,
+          "targetMastery": 90,
+          "confidence": "High",
+          "lastStudiedDate": "2026-09-06",
+          "totalSessions": 5,
+          "totalMinutes": 200
+        }
+      ]
+    },
+    {
+      "id": "sub-os",
+      "name": "Operating Systems",
+      "code": "CS301",
+      "targetExamDate": "2026-09-12",
+      "importance": "high",
+      "color": "#10B981",
+      "topics": [
+        {
+          "id": "top-cpu-scheduling",
+          "subjectId": "sub-os",
+          "name": "Process & CPU Scheduling",
+          "subtopics": [
+            "Round Robin",
+            "Multi-level Queue",
+            "Preemption"
+          ],
+          "difficulty": "Medium",
+          "currentMastery": 78,
+          "targetMastery": 85,
+          "confidence": "High",
+          "lastStudiedDate": "2026-09-05",
+          "totalSessions": 4,
+          "totalMinutes": 180
+        },
+        {
+          "id": "top-virtual-mem",
+          "subjectId": "sub-os",
+          "name": "Virtual Memory & Paging",
+          "subtopics": [
+            "Page Replacement Algorithms",
+            "TLB",
+            "Thrashing"
+          ],
+          "difficulty": "Hard",
+          "currentMastery": 65,
+          "targetMastery": 85,
+          "confidence": "Medium",
+          "lastStudiedDate": "2026-09-02",
+          "totalSessions": 3,
+          "totalMinutes": 150
+        }
+      ]
+    },
+    {
+      "id": "sub-ml",
+      "name": "Machine Learning",
+      "code": "CS410",
+      "importance": "medium",
+      "color": "#8B5CF6",
+      "topics": [
+        {
+          "id": "top-supervised",
+          "subjectId": "sub-ml",
+          "name": "Supervised Learning & Regression",
+          "subtopics": [
+            "Cost Functions",
+            "Regularization (L1/L2)",
+            "Logistic Regression"
+          ],
+          "difficulty": "Easy",
+          "currentMastery": 92,
+          "targetMastery": 95,
+          "confidence": "High",
+          "lastStudiedDate": "2026-09-06",
+          "totalSessions": 6,
+          "totalMinutes": 300
+        },
+        {
+          "id": "top-ensembles",
+          "subjectId": "sub-ml",
+          "name": "Ensemble Learning & XGBoost",
+          "subtopics": [
+            "Random Forest",
+            "Gradient Boosting",
+            "Feature Importance"
+          ],
+          "difficulty": "Medium",
+          "currentMastery": 75,
+          "targetMastery": 85,
+          "confidence": "Medium",
+          "lastStudiedDate": "2026-09-04",
+          "totalSessions": 4,
+          "totalMinutes": 220
+        }
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "id": "sess-1",
+      "subjectId": "sub-dbms",
+      "subjectName": "Database Management Systems",
+      "topicId": "top-indexing",
+      "topicName": "Indexing & B+ Trees",
+      "startTime": "2026-09-07T00:35:14.556Z",
+      "endTime": "2026-09-07T01:35:14.556Z",
+      "durationMinutes": 60,
+      "selfRatedDifficulty": 3,
+      "confidence": "Medium",
+      "problemsSolved": 4,
+      "accuracy": 80,
+      "notes": "Reviewed B+ tree leaf node splitting and range scans for the assignment",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "sess-2",
+      "subjectId": "sub-dsa",
+      "subjectName": "Data Structures & Algorithms",
+      "topicId": "top-trees",
+      "topicName": "Trees & Binary Search Trees",
+      "startTime": "2026-09-05T23:35:14.556Z",
+      "endTime": "2026-09-06T01:05:14.556Z",
+      "durationMinutes": 90,
+      "selfRatedDifficulty": 2,
+      "confidence": "High",
+      "problemsSolved": 5,
+      "accuracy": 100,
+      "notes": "Solved Lowest Common Ancestor and Tree diameter variations",
+      "date": "2026-09-06"
+    },
+    {
+      "id": "sess-3",
+      "subjectId": "sub-os",
+      "subjectName": "Operating Systems",
+      "topicId": "top-cpu-scheduling",
+      "topicName": "Process & CPU Scheduling",
+      "startTime": "2026-09-04T22:35:14.556Z",
+      "endTime": "2026-09-05T00:05:14.556Z",
+      "durationMinutes": 90,
+      "selfRatedDifficulty": 3,
+      "confidence": "Medium",
+      "problemsSolved": 6,
+      "accuracy": 85,
+      "notes": "Gantt chart calculations for Round Robin quantum tuning",
+      "date": "2026-09-05"
+    },
+    {
+      "id": "sess-4",
+      "subjectId": "sub-dsa",
+      "subjectName": "Data Structures & Algorithms",
+      "topicId": "top-dp",
+      "topicName": "Dynamic Programming",
+      "startTime": "2026-09-03T23:35:14.556Z",
+      "endTime": "2026-09-04T01:35:14.556Z",
+      "durationMinutes": 120,
+      "selfRatedDifficulty": 4,
+      "confidence": "Medium",
+      "problemsSolved": 3,
+      "accuracy": 66,
+      "notes": "0/1 Knapsack memoization table. Visualized bottom-up state progression",
+      "date": "2026-09-04"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-1",
+      "title": "DBMS Assignment 3 Submission Deadline",
+      "type": "Assignment",
+      "date": "2026-09-08",
+      "time": "23:59",
+      "reminderSchedule": [
+        "1 day before",
+        "3 hours before"
+      ],
+      "isCompleted": false
+    },
+    {
+      "id": "evt-2",
+      "title": "Technical Mock Interview with Senior Engineer",
+      "type": "Interview",
+      "date": "2026-09-12",
+      "time": "10:00",
+      "locationOrUrl": "Google Meet",
+      "reminderSchedule": [
+        "1 day before",
+        "1 hour before"
+      ],
+      "isCompleted": false
+    },
+    {
+      "id": "evt-3",
+      "title": "Operating Systems Midterm Exam",
+      "type": "Exam",
+      "date": "2026-09-17",
+      "time": "09:30",
+      "locationOrUrl": "Hall B - Room 204",
+      "reminderSchedule": [
+        "1 week before",
+        "3 days before",
+        "1 day before"
+      ],
+      "isCompleted": false
+    },
+    {
+      "id": "evt-4",
+      "title": "Cloudflare Internship Application Deadline",
+      "type": "Project Deadline",
+      "date": "2026-09-10",
+      "time": "23:59",
+      "reminderSchedule": [
+        "1 day before"
+      ],
+      "isCompleted": false
+    }
+  ],
+  "chatHistory": [
+    {
+      "id": "chat-init-1",
+      "sender": "athena",
+      "text": "Good evening. I'm Athena, your personal second brain. I'm keeping track of your DBMS assignment due tomorrow, your dynamic programming revision, and your upcoming tech interview. What would you like to work on tonight?",
+      "timestamp": "03:05 AM",
+      "suggestedActions": [
+        "Plan my evening",
+        "What are my priorities today?",
+        "I only have 2 hours today",
+        "Log a 45-min study session"
+      ]
+    },
+    {
+      "sender": "user",
+      "text": "What are my top priorities?",
+      "id": "msg-1788752406992-j8ju",
+      "timestamp": "03:40 AM"
+    },
+    {
+      "sender": "user",
+      "text": "What are my top priorities for today?",
+      "id": "msg-1788752423667-zg3v",
+      "timestamp": "03:40 AM"
+    },
+    {
+      "sender": "athena",
+      "text": "Here are your top priorities right now:\n1. **Complete DBMS assignment on B+ Tree queries**\n   *Reason*: Approaching deadline in 2 days; early start avoids last-minute cramming.\n\n2. **Submit software engineering internship application to Cloudflare**\n   *Reason*: Quick win: High leverage milestone achievable in under 30 minutes.\n\n3. **Revise Dynamic Programming memoization patterns**\n   *Reason*: Identified learning priority: Addresses a known weak topic ahead of interview/exam schedule.",
+      "toolInvocations": [
+        {
+          "name": "get_recommendations",
+          "args": {
+            "limit": 3
+          },
+          "result": "Top 3 recommended focuses: 1. Complete DBMS assignment on B+ Tree queries (Approaching deadline in 2 days; early start avoids last-minute cramming.) 2. Submit software engineering internship application to Cloudflare (Quick win: High leverage milestone achievable in under 30 minutes.) 3. Revise Dynamic Programming memoization patterns (Identified learning priority: Addresses a known weak topic ahead of interview/exam schedule.)"
+        }
+      ],
+      "id": "msg-1788752425782-7ncj",
+      "timestamp": "03:40 AM"
+    },
+    {
+      "sender": "user",
+      "text": "Remember that I am weak in DP state reduction",
+      "id": "msg-1788752429469-os8u",
+      "timestamp": "03:40 AM"
+    },
+    {
+      "sender": "athena",
+      "text": "I've handled that for you: Saved to Athena long-term memory under Academic.",
+      "toolInvocations": [
+        {
+          "name": "save_memory",
+          "args": {
+            "category": "Academic",
+            "content": "Weak in dynamic programming (DP) state reduction",
+            "importance": "high"
+          },
+          "result": "Saved to Athena long-term memory under Academic."
+        }
+      ],
+      "id": "msg-1788752435517-qgro",
+      "timestamp": "03:40 AM"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "title": "DBMS Assignment Due Tomorrow",
+      "message": "Your B+ Tree assignment is due tomorrow at 23:59. Finish the last 60 minutes tonight to stay stress-free.",
+      "type": "urgent_deadline",
+      "scheduledTime": "Today at 6:00 PM",
+      "isRead": false,
+      "actionableTaskId": "task-1"
+    },
+    {
+      "id": "notif-2",
+      "title": "Spaced Repetition: Graphs Topic Inactive",
+      "message": "You have not reviewed Graphs & Shortest Paths in 6 days. Want to do a gentle 25-minute BFS/DFS refresher?",
+      "type": "study_suggestion",
+      "scheduledTime": "Yesterday",
+      "isRead": false
+    },
+    {
+      "id": "notif-3",
+      "title": "Interview Preparation Cadence",
+      "message": "Mock interview is scheduled for Tuesday. Your OS concurrency is estimated at 50% mastery — recommended 45m review.",
+      "type": "interview_prep",
+      "scheduledTime": "2 days ago",
+      "isRead": true,
+      "actionableTaskId": "task-3"
+    }
+  ],
+  "insights": [
+    {
+      "id": "ins-1",
+      "title": "Strong Study Consistency This Week",
+      "description": "You logged 4 study sessions across 4 consecutive days, averaging 90 minutes per session.",
+      "category": "consistency",
+      "supportingData": "6.0 hours logged over last 4 days (75% of your weekly target pace).",
+      "severity": "positive",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "ins-2",
+      "title": "Graphs Topic Cold Spot (6 Days Inactive)",
+      "description": "Retention decay is beginning to accelerate for Graph algorithms since your last session on Monday.",
+      "category": "retention",
+      "supportingData": "Mastery is estimated at 45% (target 80%). A 30-minute review prevents further decay.",
+      "severity": "action_needed",
+      "date": "2026-09-07"
+    },
+    {
+      "id": "ins-3",
+      "title": "Evening Peak Problem-Solving Performance",
+      "description": "Sessions started between 6:00 PM and 9:00 PM show 85% problem accuracy compared to 65% in afternoons.",
+      "category": "pattern",
+      "supportingData": "Based on 14 recorded problem attempts across 4 recent sessions.",
+      "severity": "positive",
+      "date": "2026-09-06"
+    },
+    {
+      "id": "ins-4",
+      "title": "Tendency to Postpone High-Effort Tasks (>90m)",
+      "description": "Tasks estimated over 90 minutes have a 2.4x higher postponement rate than bite-sized 45m tasks.",
+      "category": "workload",
+      "supportingData": "Recommendation: Let Athena split large milestones like the OS review into two 45m chunks.",
+      "severity": "neutral",
+      "date": "2026-09-05"
+    }
+  ],
+  "mlStatus": {
+    "currentModelVersion": "v1.2-gradient-ranker",
+    "baselineVersion": "v1.0-heuristic-scorer",
+    "deployedAt": "2026-09-04T03:35:14.556Z",
+    "totalPredictions": 48,
+    "acceptanceRate": 83.3,
+    "averageLatencyMs": 14.2,
+    "trainingSamplesCount": 142,
+    "driftStatus": "No Drift",
+    "driftMetrics": {
+      "acceptanceDriftPercent": 2.1,
+      "featureShiftScore": 0.04,
+      "lastDriftCheck": "2026-09-07T01:35:14.556Z"
+    },
+    "recentExperiments": [
+      {
+        "id": "exp-103",
+        "name": "Gradient-Boosted Priority Ranker",
+        "modelType": "LightGBM / ScoreRank",
+        "accuracy": 0.88,
+        "ndcg": 0.92,
+        "status": "Deployed",
+        "date": "2026-09-04"
+      },
+      {
+        "id": "exp-102",
+        "name": "Elastic-Net Linear Scoring Baseline",
+        "modelType": "Ridge Logistic",
+        "accuracy": 0.79,
+        "ndcg": 0.84,
+        "status": "Archived",
+        "date": "2026-08-30"
+      },
+      {
+        "id": "exp-101",
+        "name": "Heuristic Rule-Weighted Baseline",
+        "modelType": "Linear Fallback",
+        "accuracy": 0.71,
+        "ndcg": 0.76,
+        "status": "Archived",
+        "date": "2026-08-24"
+      }
+    ]
+  },
+  "feedbackLogs": [
+    {
+      "id": "fb-1",
+      "taskId": "task-1",
+      "feedback": "Helpful",
+      "timestamp": "2026-09-06T03:35:14.603Z"
+    },
+    {
+      "id": "fb-2",
+      "taskId": "task-2",
+      "feedback": "Helpful",
+      "timestamp": "2026-09-05T03:35:14.603Z"
+    }
+  ],
+  "modelWeights": {
+    "deadlineWeight": 0.35,
+    "importanceWeight": 0.25,
+    "masteryGapWeight": 0.18,
+    "effortEfficiencyWeight": 0.12,
+    "goalAlignmentWeight": 0.1
+  }
+}
