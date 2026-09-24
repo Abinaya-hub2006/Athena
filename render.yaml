@@ -3,10 +3,13 @@ services:
     name: athena-second-brain
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build
+
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm start
+
     envVars:
       - key: NODE_ENV
         value: production
+
       - key: GEMINI_API_KEY
         sync: false
