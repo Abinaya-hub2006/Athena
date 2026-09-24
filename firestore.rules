@@ -1,0 +1,149 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global Deny-All Catch-Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Primitive Helpers
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null && request.auth.uid != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Health / connection test doc
+    match /test/{testId} {
+      allow read: if true;
+    }
+
+    // Validation Functions
+    function isValidUserProfile(data) {
+      return data.name is string && data.name.size() > 0 && data.name.size() <= 100
+        && data.email is string && data.email.size() > 0 && data.email.size() <= 150
+        && data.onboardingCompleted is bool;
+    }
+
+    function isValidTask(data, userId) {
+      return data.userId == userId
+        && data.title is string && data.title.size() > 0 && data.title.size() <= 200
+        && data.category is string && (data.category in ['Academic', 'Career', 'Project', 'Personal'])
+        && data.priority is string && (data.priority in ['Critical', 'High', 'Medium', 'Low'])
+        && data.status is string && (data.status in ['Todo', 'In Progress', 'Completed', 'Deferred', 'Cancelled'])
+        && data.estimatedEffortMinutes is number && data.estimatedEffortMinutes >= 0 && data.estimatedEffortMinutes <= 1440;
+    }
+
+    function isValidMemory(data, userId) {
+      return data.userId == userId
+        && data.content is string && data.content.size() > 0 && data.content.size() <= 2000
+        && data.category is string && (data.category in ['Personal', 'Academic', 'Career', 'Projects', 'Tasks', 'Goals', 'Preferences'])
+        && data.importance is string && (data.importance in ['high', 'medium', 'low'])
+        && data.source is string && (data.source in ['user_explicit', 'chat_inferred', 'session_log', 'onboarding']);
+    }
+
+    function isValidSubject(data, userId) {
+      return data.userId == userId
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 100
+        && data.code is string && data.code.size() > 0 && data.code.size() <= 30
+        && data.color is string && data.color.size() <= 30
+        && data.topics is list && data.topics.size() <= 50;
+    }
+
+    function isValidSession(data, userId) {
+      return data.userId == userId
+        && data.subjectName is string && data.subjectName.size() <= 100
+        && data.topicName is string && data.topicName.size() <= 100
+        && data.durationMinutes is number && data.durationMinutes > 0 && data.durationMinutes <= 1440
+        && data.date is string && data.date.size() <= 30;
+    }
+
+    function isValidEvent(data, userId) {
+      return data.userId == userId
+        && data.title is string && data.title.size() > 0 && data.title.size() <= 150
+        && data.type is string && data.type.size() <= 50
+        && data.date is string && data.date.size() <= 30;
+    }
+
+    function isValidChatMessage(data, userId) {
+      return data.userId == userId
+        && data.sender is string && (data.sender in ['user', 'athena'])
+        && data.text is string && data.text.size() > 0 && data.text.size() <= 15000
+        && data.timestamp is string && data.timestamp.size() <= 50;
+    }
+
+    function isValidNotification(data, userId) {
+      return data.userId == userId
+        && data.title is string && data.title.size() > 0 && data.title.size() <= 150
+        && data.message is string && data.message.size() <= 500
+        && data.isRead is bool;
+    }
+
+    // User Profile Document
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false;
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming());
+      allow update: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming());
+      allow delete: if isOwner(userId) && isValidId(userId);
+
+      // Subcollections
+      match /tasks/{taskId} {
+        allow get, delete: if isOwner(userId) && isValidId(taskId);
+        allow list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(taskId) && isValidTask(incoming(), userId);
+      }
+
+      match /memories/{memoryId} {
+        allow get, delete: if isOwner(userId) && isValidId(memoryId);
+        allow list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(memoryId) && isValidMemory(incoming(), userId);
+      }
+
+      match /subjects/{subjectId} {
+        allow get, delete: if isOwner(userId) && isValidId(subjectId);
+        allow list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(subjectId) && isValidSubject(incoming(), userId);
+      }
+
+      match /sessions/{sessionId} {
+        allow get, delete: if isOwner(userId) && isValidId(sessionId);
+        allow list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(sessionId) && isValidSession(incoming(), userId);
+      }
+
+      match /events/{eventId} {
+        allow get, delete: if isOwner(userId) && isValidId(eventId);
+        allow list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(eventId) && isValidEvent(incoming(), userId);
+      }
+
+      match /chatMessages/{messageId} {
+        allow get, delete: if isOwner(userId) && isValidId(messageId);
+        allow list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(messageId) && isValidChatMessage(incoming(), userId);
+      }
+
+      match /notifications/{notificationId} {
+        allow get, delete: if isOwner(userId) && isValidId(notificationId);
+        allow list: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidId(notificationId) && isValidNotification(incoming(), userId);
+      }
+    }
+  }
+}

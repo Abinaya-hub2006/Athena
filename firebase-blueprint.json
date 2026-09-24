@@ -1,0 +1,186 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with personal second brain preferences and study targets",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 150 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "preferredStudyHours": { "type": "string", "maxLength": 100 },
+        "dailyFocusTargetMinutes": { "type": "number" },
+        "onboardingCompleted": { "type": "boolean" },
+        "theme": { "type": "string", "enum": ["dark", "light", "system"] },
+        "quietHours": { "type": "object" },
+        "notifications": { "type": "object" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "email", "onboardingCompleted"]
+    },
+    "Task": {
+      "title": "Task",
+      "description": "Personal task, study assignment, or project milestone",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "category": { "type": "string", "enum": ["Academic", "Career", "Project", "Personal"] },
+        "priority": { "type": "string", "enum": ["Critical", "High", "Medium", "Low"] },
+        "calculatedScore": { "type": "number" },
+        "recommendedRank": { "type": "number" },
+        "recommendationReason": { "type": "string", "maxLength": 500 },
+        "deadline": { "type": "string", "maxLength": 60 },
+        "estimatedEffortMinutes": { "type": "number" },
+        "status": { "type": "string", "enum": ["Todo", "In Progress", "Completed", "Deferred", "Cancelled"] },
+        "project": { "type": "string", "maxLength": 100 },
+        "subject": { "type": "string", "maxLength": 100 },
+        "tags": { "type": "array" },
+        "recurrence": { "type": "string" },
+        "completedAt": { "type": "string" },
+        "postponedCount": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "title", "category", "priority", "status", "estimatedEffortMinutes"]
+    },
+    "MemoryItem": {
+      "title": "MemoryItem",
+      "description": "User second brain memory bank item",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "content": { "type": "string", "maxLength": 1500 },
+        "category": { "type": "string", "enum": ["Personal", "Academic", "Career", "Projects", "Tasks", "Goals", "Preferences"] },
+        "importance": { "type": "string", "enum": ["high", "medium", "low"] },
+        "confidence": { "type": "number" },
+        "source": { "type": "string", "enum": ["user_explicit", "chat_inferred", "session_log", "onboarding"] },
+        "createdDate": { "type": "string" },
+        "updatedDate": { "type": "string" },
+        "expirationDate": { "type": "string" },
+        "tags": { "type": "array" },
+        "isStarred": { "type": "boolean" }
+      },
+      "required": ["userId", "content", "category", "importance", "confidence", "source"]
+    },
+    "StudySubject": {
+      "title": "StudySubject",
+      "description": "Academic subject with topics and mastery tracking",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 100 },
+        "code": { "type": "string", "maxLength": 30 },
+        "targetExamDate": { "type": "string", "maxLength": 50 },
+        "importance": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+        "color": { "type": "string", "maxLength": 30 },
+        "topics": { "type": "array" }
+      },
+      "required": ["userId", "name", "code", "importance", "color", "topics"]
+    },
+    "StudySession": {
+      "title": "StudySession",
+      "description": "Logged focused study session",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "subjectId": { "type": "string", "maxLength": 100 },
+        "subjectName": { "type": "string", "maxLength": 100 },
+        "topicId": { "type": "string", "maxLength": 100 },
+        "topicName": { "type": "string", "maxLength": 100 },
+        "startTime": { "type": "string" },
+        "endTime": { "type": "string" },
+        "durationMinutes": { "type": "number" },
+        "selfRatedDifficulty": { "type": "number" },
+        "confidence": { "type": "string", "enum": ["Low", "Medium", "High"] },
+        "problemsSolved": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "notes": { "type": "string", "maxLength": 1000 },
+        "date": { "type": "string" }
+      },
+      "required": ["userId", "subjectName", "topicName", "durationMinutes", "date"]
+    },
+    "CalendarEvent": {
+      "title": "CalendarEvent",
+      "description": "Calendar deadline or event reminder",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 150 },
+        "type": { "type": "string", "maxLength": 50 },
+        "date": { "type": "string", "maxLength": 30 },
+        "time": { "type": "string", "maxLength": 20 },
+        "locationOrUrl": { "type": "string", "maxLength": 200 },
+        "reminderSchedule": { "type": "array" },
+        "isCompleted": { "type": "boolean" }
+      },
+      "required": ["userId", "title", "type", "date"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Conversation message between user and Athena AI",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "sender": { "type": "string", "enum": ["user", "athena"] },
+        "text": { "type": "string", "maxLength": 10000 },
+        "timestamp": { "type": "string" },
+        "toolInvocations": { "type": "array" },
+        "suggestedActions": { "type": "array" }
+      },
+      "required": ["userId", "sender", "text", "timestamp"]
+    },
+    "AthenaNotification": {
+      "title": "AthenaNotification",
+      "description": "Proactive notification alert",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "type": { "type": "string", "maxLength": 50 },
+        "title": { "type": "string", "maxLength": 150 },
+        "message": { "type": "string", "maxLength": 500 },
+        "timestamp": { "type": "string" },
+        "isRead": { "type": "boolean" },
+        "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+        "taskId": { "type": "string", "maxLength": 128 },
+        "actionLabel": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["userId", "type", "title", "message", "timestamp", "isRead", "priority"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Top-level user profile and preferences"
+    },
+    "/users/{userId}/tasks/{taskId}": {
+      "schema": "Task",
+      "description": "Personal user tasks and assignments"
+    },
+    "/users/{userId}/memories/{memoryId}": {
+      "schema": "MemoryItem",
+      "description": "User personal second-brain long-term memories"
+    },
+    "/users/{userId}/subjects/{subjectId}": {
+      "schema": "StudySubject",
+      "description": "User academic study subjects and topics"
+    },
+    "/users/{userId}/sessions/{sessionId}": {
+      "schema": "StudySession",
+      "description": "User logged study sessions"
+    },
+    "/users/{userId}/events/{eventId}": {
+      "schema": "CalendarEvent",
+      "description": "User calendar deadlines and events"
+    },
+    "/users/{userId}/chatMessages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "User chat conversation logs with Athena"
+    },
+    "/users/{userId}/notifications/{notificationId}": {
+      "schema": "AthenaNotification",
+      "description": "Proactive user notifications"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Athena",
+  "description": "Android-first personal AI assistant and second brain that remembers your context, studies, tasks, and priorities with proactive recommendations.",
+  "requestFramePermissions": ["microphone", "notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

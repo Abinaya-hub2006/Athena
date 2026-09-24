@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athena — Project Write-Up & Technical Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 32px 16px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 48px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border);
+    }
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+    .btn-secondary:hover {
+      background: #cbd5e1;
+    }
+    .header-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 32px;
+      border-radius: 12px;
+      margin-bottom: 36px;
+    }
+    .header-banner h1 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .header-banner .subtitle {
+      font-size: 15px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+    .header-banner .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      font-size: 12px;
+      color: #bae6fd;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 16px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 28px 0 12px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e0f2fe;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 48px;
+      height: 2px;
+      background: var(--primary);
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 18px 0 8px 0;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      margin-bottom: 14px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    li strong {
+      color: #0f172a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 13.5px;
+    }
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 600;
+    }
+    td {
+      color: var(--text-muted);
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .action-bar {
+        display: none !important;
+      }
+      .header-banner {
+        background: #0f172a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      h2 {
+        break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="action-bar">
+      <div>
+        <a href="/" class="btn btn-secondary">
+          &larr; Back to App
+        </a>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button id="btn-download-pdf" class="btn btn-primary" onclick="window.print()">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Print / Save as PDF
+        </button>
+      </div>
+    </div>
+
+    <div class="header-banner">
+      <h1>Athena — AI Second Brain & Intelligent Academic Planner</h1>
+      <div class="subtitle">Official Project Write-Up & Technical Architecture Report</div>
+      <div class="meta-grid">
+        <div><strong>Author:</strong> abinayak829@gmail.com</div>
+        <div><strong>Status:</strong> Core System Operational</div>
+        <div><strong>AI Engine:</strong> Google Gemini 2.5 Flash</div>
+        <div><strong>Database:</strong> Firebase Firestore</div>
+      </div>
+    </div>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+      Students, researchers, and knowledge workers face severe cognitive overload balancing fluctuating exam deadlines, topic mastery decay, daily routines, and task prioritization. Traditional task managers are static lists: they do not understand <em>when</em> the user works best, <em>what</em> topics they are struggling with, or <em>why</em> one task should take precedence over another.
+    </p>
+    <p>
+      <strong>Athena</strong> is an intelligent, context-aware "Second Brain" and proactive academic copilot. Built as an Android-first Progressive Web Application (PWA), Athena continuously models the user's cognitive state, academic commitments, memory bank, and energy patterns. Using a customized <strong>Learning-to-Rank (L2R) recommendation engine</strong> combined with <strong>Google Gemini 2.5 Flash</strong>, Athena automatically structures the user's day, provides reasoned task priorities, detects knowledge decay, and acts as an empathetic personal advisor.
+    </p>
+
+    <h2>2. Core Vision & Objectives</h2>
+    <ul>
+      <li><strong>Active Context Retention (The Second Brain Vault):</strong> Automatically extract, categorize, and recall user habits, academic weaknesses, preferences, and personal goals in a centralized vault.</li>
+      <li><strong>Explainable Task Prioritization:</strong> Eliminate decision fatigue by dynamically scoring tasks across 6 dimensions with human-readable rationales (e.g. deadline urgency, mastery gaps, energy alignment).</li>
+      <li><strong>Adaptive Spaced Repetition & Topic Mastery:</strong> Track mastery decay curves across courses and exam dates, proactively queuing refresher sessions before knowledge is lost.</li>
+      <li><strong>Context-Grounded Conversational Intelligence:</strong> A companion chatbot powered by Gemini that answers queries using real-time academic records, upcoming deadlines, and personal memories without hallucinations.</li>
+      <li><strong>Zero-Friction Privacy & Resilience:</strong> Dual-mode persistence combining secure Cloud Firestore (with Google OAuth) and local offline-first storage fallback.</li>
+    </ul>
+
+    <h2>3. System Architecture & Technical Stack</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Key Responsibilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frontend UI</strong></td>
+          <td>React 19, TypeScript, Vite 6</td>
+          <td>High-performance reactive component tree, sub-millisecond route transitions, strict type safety.</td>
+        </tr>
+        <tr>
+          <td><strong>Styling & UI</strong></td>
+          <td>Tailwind CSS v4, Lucide Icons, Motion</td>
+          <td>Android/desktop-adaptive dark aesthetic, glassmorphic accents, WCAG-compliant color contrasts.</td>
+        </tr>
+        <tr>
+          <td><strong>Backend API</strong></td>
+          <td>Express 4.21, Node.js 20, tsx/esbuild</td>
+          <td>RESTful endpoints (/api/tasks, /api/memories, /api/chat), bundled into single CommonJS file.</td>
+        </tr>
+        <tr>
+          <td><strong>AI / LLM Engine</strong></td>
+          <td>Google Gemini 2.5 Flash</td>
+          <td>Server-side prompt synthesis, context assembly, second brain memory injection.</td>
+        </tr>
+        <tr>
+          <td><strong>Database & Auth</strong></td>
+          <td>Firebase Firestore & Google OAuth</td>
+          <td>Multi-tenant user isolation, Google OAuth 2.0 popup flows, real-time sync with local fallback.</td>
+        </tr>
+        <tr>
+          <td><strong>DevOps & CI/CD</strong></td>
+          <td>Docker, GitHub Actions, Google Cloud Run</td>
+          <td>Multi-stage Docker build, automated PR lint/typechecking, continuous Cloud Run deployment.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Work Completed So Far (Delivered Modules)</h2>
+    <h3>4.1. Intelligent Machine Learning Task Ranking Engine</h3>
+    <ul>
+      <li><strong>Multi-Factor Scoring Matrix:</strong> Evaluates tasks across 6 dimensions: Deadline Proximity, Base Priority, Topic Mastery Gap, Energy Alignment, Effort Efficiency, and Context Momentum.</li>
+      <li><strong>Explainable AI (XAI):</strong> Generates natural-language reasoning cards explaining exactly why Athena ranked each task in its position.</li>
+      <li><strong>Online Weight Adaptation:</strong> Feedback loop capturing user accepts, skips, reorders, and completions to dynamically adjust algorithmic weights over time.</li>
+    </ul>
+
+    <h3>4.2. Second Brain Knowledge Vault</h3>
+    <ul>
+      <li>Structured memory categorization: <strong>Academic, Personal, Habit, Goal, Weakness</strong>.</li>
+      <li>Confidence scoring, star pinning, tag filtering, and real-time full-text search.</li>
+      <li>Automatic injection into Gemini system prompts for personalized recommendations.</li>
+    </ul>
+
+    <h3>4.3. Academic Course & Mastery Hub</h3>
+    <ul>
+      <li>Full course lifecycle management (Add, edit, track, delete subjects).</li>
+      <li>Syllabus topic mastery breakdown with visual percentage meters.</li>
+      <li>Exam countdown timers with urgency color coding.</li>
+    </ul>
+
+    <h3>4.4. Proactive AI Companion Chat</h3>
+    <ul>
+      <li>Server-side proxy shielding GEMINI_API_KEY from client exposure.</li>
+      <li>Dynamic system prompt synthesis injecting the user's real profile, study hours, weak topics, imminent deadlines, and memories.</li>
+      <li>Suggested conversation prompt pills for fast querying.</li>
+    </ul>
+
+    <h3>4.5. Daily Planner & Day Cockpit</h3>
+    <ul>
+      <li>Today's prioritized sprint view with task completion checklists.</li>
+      <li>Quick task creation modal with deadline picker, subject tagging, and priority tiering.</li>
+      <li>Real-time productivity analytics, streak calculation, and daily focus meters.</li>
+    </ul>
+
+    <h3>4.6. Authentication, Security & Dual Persistence</h3>
+    <ul>
+      <li>Google OAuth with Firebase Authentication integration and isolated Firestore user paths.</li>
+      <li>Local Development Mode bypass for instant testing without cloud dependencies.</li>
+    </ul>
+
+    <h3>4.7. DevOps, CI/CD & Local Tooling</h3>
+    <ul>
+      <li>Multi-stage Dockerfile creating a lightweight, production-ready runner image on port 3000.</li>
+      <li>GitHub Actions CI workflow for automated linting and build validation.</li>
+      <li>GitHub Actions CD workflow for continuous deployment to Google Cloud Run.</li>
+      <li>Visual Studio Code integration (.vscode/tasks.json, .vscode/launch.json) enabling single-click F5 debugging.</li>
+    </ul>
+
+    <h2>5. Balance Planned to Be Done (Roadmap)</h2>
+    <h3>Phase 1: High-Priority Next Deliverables (Immediate Focus)</h3>
+    <ul>
+      <li><strong>Automated Memory Extraction from Chat:</strong> Equip Gemini chat agent with function calling to automatically detect and persist habits and exam dates from normal conversation.</li>
+      <li><strong>Calendar Synchronization:</strong> Ingest external Google Calendar / iCal feeds to automatically schedule study blocks during free gaps.</li>
+      <li><strong>Interactive Flashcards (FSRS Algorithm):</strong> Implement active recall flashcard sessions with Again/Hard/Good/Easy grading to calculate memory retention curves.</li>
+    </ul>
+
+    <h3>Phase 2: Medium-Term Enhancements</h3>
+    <ul>
+      <li><strong>Web Push Notifications:</strong> Alerts before scheduled focus blocks and spaced repetition decay thresholds.</li>
+      <li><strong>Document & Lecture Notes Ingestion (RAG):</strong> Upload PDF lecture notes or syllabi for automated topic breakdown and quiz generation.</li>
+      <li><strong>Hands-Free Voice Interface:</strong> Gemini Live / Web Speech API integration for on-the-go study sessions.</li>
+    </ul>
+
+    <h3>Phase 3: Long-Term Innovations</h3>
+    <ul>
+      <li><strong>Collaborative Study Groups:</strong> Anonymous peer benchmarking for course mastery and shared question banks.</li>
+      <li><strong>Wearable & Biometric Energy Integration:</strong> Health Connect sync to dynamically adjust study goals based on physical recovery scores.</li>
+      <li><strong>Packaged Mobile App:</strong> Android TWA / Play Store release with offline background sync.</li>
+    </ul>
+
+    <h2>6. Conclusion</h2>
+    <p>
+      Athena bridges the gap between static task trackers and modern generative artificial intelligence. By pairing deterministic, explainable mathematical ranking algorithms with the contextual synthesis of Gemini 2.5 and the real-time reliability of Firebase Firestore, Athena provides students with an adaptive second brain that actively reduces cognitive friction and empowers academic mastery.
+    </p>
+
+    <div class="footer">
+      Athena AI Second Brain &bull; Confidential Academic & Engineering Project &bull; 2026
+    </div>
+  </div>
+</body>
+</html>
